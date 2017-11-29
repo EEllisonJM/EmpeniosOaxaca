@@ -7,10 +7,25 @@
   <link rel="stylesheet" type="text/css" href="css/estilos.css">
 </head>
 <body>
-  <h1> CASA DE EMPEÑOS OAXACA </h1>
-  <input type="text" name="txt_Buscar" placeholder="Buscar...">
-  <button type="button">Buscar </button>
+  <div class="container">
+  <header>
+     <h1>Apartado de los productos ofrecidos por la empresa Empeños Mexicanos Oaxaca</h1>
+     <input type="text" name="txt_Buscar" placeholder="Buscar...">
+     <button type="button">Buscar </button>
+     <a href="#">Login</a>
+  </header>
+
   <br>
+  <nav>
+  <ul>
+    <a>Categorías</a>
+    <li><a href="cargar=?as=">Video juegos</a></li>
+    <li><a href="#">Computadoras</a></li>
+    <li><a href="#">Televisores</a></li>
+    <li><a href="#">Celulares</a></li>
+  </ul>
+</nav>
+
 
   <?php
   error_reporting(E_ALL ^ E_NOTICE);
@@ -29,16 +44,20 @@
     // output data of each row
     while($row = $result->fetch_assoc()) {
       ?>
-      <div class="gallery">
-        <a target="_blank"
-        href="Images/<?php echo $row["rutaImagen"].".jpg"; ?>">
-        <img src="Images/<?php echo $row["rutaImagen"].".jpg"	?>"  />
-      </a>
-      <div class="nombre"><?php echo $row["Nombre"] ?></div>
-      <div class="marca"><?php echo $row["Marca"] ?></div>
-      <div class="descripcion"><?php echo $row["Descripcion"] ?></div>
-      <div class="precio"><?php echo $row["Precio"] ?></div>
-    </div>
+      <article>
+        <div class="gallery">
+          <a target="_blank"
+          href="Images/<?php echo $row["rutaImagen"].".jpg"; ?>">
+          <img src="Images/<?php echo $row["rutaImagen"].".jpg"	?>"  />
+        </a>
+        <div class="nombre"><?php echo $row["Nombre"] ?></div>
+        <div class="marca"><?php echo $row["Marca"] ?></div>
+        <div class="descripcion"><?php echo $row["Descripcion"] ?></div>
+        <div class="precio"><?php echo $row["Precio"] ?></div>
+        <div class="reservar"> <button type="button">Reservar!</button> </div>
+      </div>
+      </article>
+
     <?php
   }
 } else {
@@ -49,5 +68,5 @@ $conexion->close();
 ?>
 
 </body>
-<!-- <footer>Todos los derechos reservados - FOOTER</footer>-->
+<footer>Todos los derechos reservados - FOOTER</footer>
 </html>
