@@ -20,7 +20,7 @@ if ($conexion->connect_error) {
 <body>
   <center>
     <div class="centrar">
-      <center><label style="font-weight:bold; font-size: 14pt;">Listado de areas</label></center>
+      <center><label style="font-weight:bold; font-size: 14pt;">Listado de Productos</label></center>
 
       <table border="2" align="center">
         <tr>
