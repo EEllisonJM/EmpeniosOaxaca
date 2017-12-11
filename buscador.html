@@ -1,0 +1,58 @@
+<style>
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
+
+
+<!DOCTYPE html>
+<html>
+
+<script src="../angular/angular.min.js"></script>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl" >
+
+<p>Busca en el campo siguiente:</p>
+
+<p><input type="text" ng-model="test"></p>
+<table>
+   <td>Numero de Inventario</td>
+   <td>Concepto</td>
+   <td>Tipo</td>
+
+   <tr ng-repeat="x in names | filter:test">
+	<img src="{{x.RutaImagen}}.jpg"/><br>
+    <td>{{ x.RutaImagen }}</td>
+    <td>{{ x.Descripcion }}</td>
+	<td>{{ x.Marca }}</td>
+  <td><a href="editar.php">Editar</a></td>
+  <td><a href="eliminar.php">Eliminar</a
+  </tr>
+	
+ </li>
+</ul>
+</table>
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope, $http) {
+$http.get("servidor_bd.php")
+   .then(function (response) {$scope.names = response.data.datos; $scope.mirespuesta=null;});    
+});
+</script>
+
+</body>
+</html>
