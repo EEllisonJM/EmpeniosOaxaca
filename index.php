@@ -81,11 +81,11 @@ while ($row = $result->fetch_assoc()) {
   <article>
     <div class="gallery">
       <a target="_blank"
-         href="Images/<?php
-               echo $row["rutaImagen"] . ".jpg";
+         href="<?php
+               echo $row["rutaImagen"];
                                                ?>">
-        <img src="Images/<?php
-                  echo $row["rutaImagen"] . ".jpg";
+        <img src="<?php
+                  echo $row["rutaImagen"];
                                                   ?>"  />
       </a>
       <div class="nombre">
