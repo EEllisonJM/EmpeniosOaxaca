@@ -5,7 +5,7 @@
             <a>Categorías
             </a>
             <li>
-               <a href="index.php?categoria=Computacion" name="Computacion">Computacion
+               <a href="index.php?categoria=Computacion">Computacion
                </a>
             </li>
             <li>

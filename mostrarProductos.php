@@ -3,10 +3,10 @@ if ($result->num_rows > 0) {
     /*Mostrar los datos*/
     while ($row = $result->fetch_assoc()) {
 ?>
- <article>
-    <div class="gallery">
-      <a target="_blank"
-         href="<?php
+<article>
+  <div class="gallery">
+    <a target="_blank"
+    href="<?php
         echo $row["rutaImagen"]; 
 ?>">
         <img src="<?php
@@ -15,32 +15,32 @@ if ($result->num_rows > 0) {
       </a>
       <div class="nombre">
         <?php
-        echo $row["Nombre"];
+        echo $row["nombre"];
 ?>
      </div>
       <div class="marca">
         <?php
-        echo $row["Marca"];
+        echo $row["marca"];
 ?>
      </div>
       <div class="descripcion">
         <?php
-        echo $row["Descripcion"];
+        echo $row["descripcion"];
 ?>
      </div>
       <div class="precio">
         <?php
-        echo $row["Precio"];
+        echo "$".$row["precio"];
 ?>
-
       </div>
       <div class="reservar">
-        <form action="reservar.php">
-    <input type="submit" value="Reservar producto" />
-</form>
+        <form action="index.php" method="POST">
+            <input type="text" hidden name="reservargetID" value='<?php echo $row['idProducto']; ?>'>
+            <input type="submit" value="Reservar producto" />
+        </form>
       </div>
     </div>
-  </article>
+</article>
   <?php
     }
 } else {
