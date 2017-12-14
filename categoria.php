@@ -5,27 +5,27 @@
                <a>Categorías
                </a>
                <li>
-                  <a href="?categoria=Computacion" name="Computacion">Computacion
+                  <a href="index.php?categoria=Computacion" name="Computacion">Computacion
                   </a>
                </li>
                <li>
-                  <a href="vistas/Consolas.php">Consolas
+                  <a href="index.php?categoria=Consolas">Consolas
                   </a>
                </li>
                <li>
-                  <a href="vistas/Celulares.php">Celulares
+                  <a href="index.php?categoria=Celulares">Celulares
                   </a>
                </li>
                <li>
-                  <a href="vistas/AudioVideo.php">Audio y Video
+                  <a href="index.php?categoria=AudioVideo">Audio y Video
                   </a>
                </li>
                <li>
-                  <a href="vistas/Juegos.php">Juegos
+                  <a href="index.php?categoria=Juegos">Juegos
                   </a>
                </li>
                <li>
-                  <a href="vistas/Televisores.php">Televisores
+                  <a href="index.php?categoria=Televisores">Televisores
                   </a>
                </li>
             </ul>
