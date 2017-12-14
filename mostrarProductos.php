@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
 ?>
       </div>
       <div class="reservar">
-        <form action="index.php?idProducto=<?php echo $row["idProducto"]; ?>" method="post">
+        <form action="index.php" method="post">
           <input type="submit" value="Reservar producto" name="reservar" />
         </form>
       </div>

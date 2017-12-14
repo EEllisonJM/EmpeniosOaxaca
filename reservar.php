@@ -7,7 +7,7 @@
         <br>
         Codigo : <input type="text" name="Codigo">
         <br>
-        Producto : Xbox
+        Producto : (Por aqui debe aparecer el nombre del producto a reservar)
         <br>
         <input type="submit" value="Confirmar reserva" />
       </form>
