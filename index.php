@@ -12,19 +12,25 @@ if ($conexion->connect_error) {
 ?>
 <html><!-- Inicio HTML-->
 <?php
-if (!empty($_POST['reservar'])) {/*RESERVAR PRODUCTO*/
-  //$nombre = $_GET['search'];
-    //$sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
-  //WHERE Nombre LIKE '$nombre%' and reservado=0;";
-    //$result = $conexion->query($sql);
-  echo "Quiero pasar por aqui el nombre del producto, y asi mostrarlo en reservar.php";
+
+if (!empty($_POST['btnConfirmar'])) {/*CLIENTE CONFIRMA COMPRA*/  
+  ?>
+  <script language="javascript">
+        alert("\tSEGURO?");
+        window.location="index.php";
+      </script>           
+      <?php
+}
+if (!empty($_POST['reservargetID'])) {/*RESERVAR PRODUCTO*/  
+  $esteid = $_POST['reservargetID'];//Obtener id
+  //echo  $esteid;
   include("reservar.php");
 }else{
 
 if (!empty($_GET['search'])) {/*MOSTRAR PRODUCTO A BUSCAR*/
     $nombre = $_GET['search'];
-    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
-  WHERE Nombre LIKE '$nombre%' and reservado=0;";
+    $sql    = "SELECT idProducto, nombre, descripcion, marca, precio,rutaImagen,categoria FROM Producto
+  WHERE nombre LIKE '$nombre%' and reservado=0;";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
 }else{
@@ -37,12 +43,12 @@ if (/*SELECCIONAR CATEGORIA A MOSTRAR*/
   (!empty($_GET['categoria']=="Televisores"))
 ) {  
   $categoria=$_GET['categoria'];
-    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
+    $sql    = "SELECT idProducto, nombre, descripcion, marca, precio,rutaImagen,categoria FROM Producto
   WHERE categoria='$categoria' and reservado=0";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
 }else {/*MOSTRAR PRODUCTOS*/
-    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto WHERE reservado=0" ;
+    $sql    = "SELECT idProducto, nombre, descripcion, marca, precio,rutaImagen,categoria FROM Producto WHERE reservado=0" ;
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
 }

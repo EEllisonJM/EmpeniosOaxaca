@@ -15,27 +15,28 @@ if ($result->num_rows > 0) {
       </a>
       <div class="nombre">
         <?php
-        echo $row["Nombre"];
+        echo $row["nombre"];
 ?>
      </div>
       <div class="marca">
         <?php
-        echo $row["Marca"];
+        echo $row["marca"];
 ?>
      </div>
       <div class="descripcion">
         <?php
-        echo $row["Descripcion"];
+        echo $row["descripcion"];
 ?>
      </div>
       <div class="precio">
         <?php
-        echo "$".$row["Precio"];
+        echo "$".$row["precio"];
 ?>
       </div>
       <div class="reservar">
-        <form action="index.php" method="post">
-          <input type="submit" value="Reservar producto" name="reservar" />
+        <form action="index.php" method="POST">
+            <input type="text" hidden name="reservargetID" value='<?php echo $row['idProducto']; ?>'>
+            <input type="submit" value="Reservar producto" />
         </form>
       </div>
     </div>

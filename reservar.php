@@ -1,5 +1,5 @@
 <article>
-      <form action="" method="POST">
+      <form action="index.php" method="POST">
         <br>
         Nombre : <input type="text" name="nombre">
         <br>
@@ -7,8 +7,8 @@
         <br>
         Codigo : <input type="text" name="Codigo">
         <br>
-        Producto : (Por aqui debe aparecer el nombre del producto a reservar)
+        Producto : <?php echo $esteid; ?>
         <br>
-        <input type="submit" value="Confirmar reserva" />
+        <input type="submit" value="Confirmar reserva" name="btnConfirmar" />
       </form>
 </article>

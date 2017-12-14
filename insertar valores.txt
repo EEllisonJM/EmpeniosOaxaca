@@ -1,9 +1,0 @@
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`, `rutaImagen`, `reservado`) VALUES (NULL, 'Bocinas', 'Bocinas grandes', 'Velikka', '1500', '1', '0');
-
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`, `rutaImagen`, `reservado`) VALUES (NULL, 'Nintendo Wii', 'Version 3.0', 'Nintendo', '1700', '2', '0');
-
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`, `rutaImagen`, `reservado`) VALUES (NULL, 'iPhone X', 'x10', 'Apple', '4500', '3', '0');
-
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`, `rutaImagen`, `reservado`) VALUES (NULL, 'PS4', 'Slim', 'Sony', '5500', '4', '0');
-
-INSERT INTO `producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`, `rutaImagen`, `reservado`) VALUES (NULL, 'Laptop', 'Gamer', 'DELL', '5500', '5', '0');
