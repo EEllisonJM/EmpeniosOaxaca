@@ -13,10 +13,14 @@ if ($conexion->connect_error) {
 ?>
 <html><!-- Inicio HTML-->
 <?php
+if (!empty($_POST['reservar'])) {
+  include("reservar.php");
+}else{
+
 if (!empty($_GET['search'])) {
     $nombre = $_GET['search'];
-    $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
-  WHERE Nombre LIKE '$nombre%';";
+    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
+  WHERE Nombre LIKE '$nombre%' and reservado=0;";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
 }else{
@@ -29,14 +33,15 @@ if (
   (!empty($_GET['categoria']=="Televisores"))
 ) {  
   $categoria=$_GET['categoria'];
-    $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
-  WHERE categoria='$categoria'";
+    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
+  WHERE categoria='$categoria' and reservado=0";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
 }else {
-    $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto";
+    $sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto WHERE reservado=0" ;
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
+}
 }
 }
 ?>
