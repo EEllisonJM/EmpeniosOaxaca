@@ -1,128 +1,34 @@
 <?php 
 error_reporting(E_ALL ^ E_NOTICE);
 include("./db/configuracion.php");
-
-// Create connection
+include("encabezado.php");
+include("categoria.php");
+/*Conectar con el servidor*/
 $conexion = new mysqli($servername, $username, $password, $dbname);
-// Check connection
+/*Revisar conexion*/
 if ($conexion->connect_error) {
-die("Connection failed: " . $conexion->connect_error);
+  die("Connection failed: " . $conexion->connect_error);
 }
-$sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto";
-$result = $conexion->query($sql);
 ?>
-<html>
-   <head>
-      <!--Icono de Buscar-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!--Css personalizado-->
-      <link rel="stylesheet" href="css/myStyle.css">
-   </head>
-   <body>
-      </div>
-      <div class="topnav">
-         <img src="LogoEmpresa.png">  
-         <a class="active" href="#home">Inicio
-         </a>
-         <a >Buscar:
-         </a>  
-         <div class="search-container">
-            <form action="index.html">
-               <input type="text" placeholder="Televisores.." name="search">
-               <button type="submit">
-               <i class="fa fa-search">
-               </i>
-               </button>
-            </form>
-         </div>
-         <a>Horario de Atención: Lunes a Domingo de 9:00 am a 9:00 pm 
-         </a>
-         <a href="vistas/logueo.php">Login
-         </a>
-      </div>
-      <div class="categoria">
-         <nav>
-            <ul>
-               <a>Categorías
-               </a>
-               <li>
-                  <a href="vistas/Computacion.php">Computacion
-                  </a>
-               </li>
-               <li>
-                  <a href="vistas/Consolas.php">Consolas
-                  </a>
-               </li>
-               <li>
-                  <a href="vistas/Celulares.php">Celulares
-                  </a>
-               </li>
-               <li>
-                  <a href="vistas/AudioVideo.php">Audio y Video
-                  </a>
-               </li>
-               <li>
-                  <a href="vistas/Juegos.php">Juegos
-                  </a>
-               </li>
-               <li>
-                  <a href="vistas/Televisores.php">Televisores
-                  </a>
-               </li>
-            </ul>
-         </nav>
-      </div>
+<html>  
+
 <?php
-if ($result->num_rows > 0) {
-// output data of each row
-while ($row = $result->fetch_assoc()) {
-  
+if (!empty($_GET['search'])) {
+  $nombre = $_GET['search'];
+  $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
+  WHERE Nombre='$nombre';";
+  $result = $conexion->query($sql);
 ?>
-  <article>
-    <div class="gallery">
-      <a target="_blank"
-         href="<?php
-               echo $row["rutaImagen"];
-                                               ?>">
-        <img src="<?php
-                  echo $row["rutaImagen"];
-                                                  ?>"  />
-      </a>
-      <div class="nombre">
-        <?php
-echo $row["Nombre"];
-?>
-      </div>
-      <div class="marca">
-        <?php
-echo $row["Marca"];
-?>
-      </div>
-      <div class="descripcion">
-        <?php
-echo $row["Descripcion"];
-?>
-      </div>
-      <div class="precio">
-        <?php
-echo $row["Precio"];
+<?php
+include("mostrarProductos.php");
+}else{
+  $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto";
+  $result = $conexion->query($sql);
 ?>
 
-      </div>
-      <div class="reservar">
-        <form action="reservar.php">
-    <input type="submit" value="Reservar producto" />
-</form>
-      </div>
-    </div>
-  </article>
-  <?php
-}
-} else {
-echo "0 results";
-}
-$conexion->close();
-?>
-</body>
+<html>  
+<?php
+include("mostrarProductos.php");
+}?>
 <footer>Todos los derechos reservados</footer>
 </html> 
