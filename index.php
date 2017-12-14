@@ -13,7 +13,7 @@ if ($conexion->connect_error) {
 ?>
 <html><!-- Inicio HTML-->
 <?php
-
+<<<<<<< HEAD
 if (!empty($_GET['search'])) {
 =======
 if (!empty($_POST['reservar'])) {/*RESERVAR PRODUCTO*/
