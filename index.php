@@ -19,7 +19,7 @@ if (!empty($_GET['search'])) {
   WHERE Nombre LIKE '$nombre%';";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
-}
+}else{
 if (
   (!empty($_GET['categoria']=="Computacion")) ||
   (!empty($_GET['categoria']=="Consolas")) ||
@@ -37,6 +37,7 @@ if (
     $sql    = "SELECT Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto";
     $result = $conexion->query($sql);
     include("mostrarProductos.php");
+}
 }
 ?>
 <footer>Todos los derechos reservados</footer>
