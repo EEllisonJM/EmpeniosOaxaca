@@ -51,12 +51,5 @@ INSERT INTO `Producto` (`idProducto`, `nombre`, `descripcion`, `marca`, `precio`
 INSERT INTO Usuario (`nombre`, `password`, `area`) VALUES
 ('Juan', 'Juan', 'GERENTE');
 
----[idCliente] => [codigo] de reserva
-CREATE TRIGGER insertar_codigo AFTER INSERT
-ON Cliente
-FOR EACH ROW
-UPDATE cliente SET codigo = New.idCliente WHERE idCliente = New.idCliente;
-
-
 -- AUTOINCREMENTAR A PARTIR DE 1000
 ALTER TABLE Cliente AUTO_INCREMENT=1000; 
