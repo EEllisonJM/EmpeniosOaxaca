@@ -17,7 +17,7 @@ if (!empty($_POST['reservar'])) {/*RESERVAR PRODUCTO*/
     //$sql    = "SELECT idProducto, Nombre, Descripcion, Marca, Precio,rutaImagen,categoria FROM Producto
   //WHERE Nombre LIKE '$nombre%' and reservado=0;";
     //$result = $conexion->query($sql);
-  echo "Quiero pasar por aqui el nombre del producto, y asi mostrarlo en reservar.php"
+  echo "Quiero pasar por aqui el nombre del producto, y asi mostrarlo en reservar.php";
   include("reservar.php");
 }else{
 
