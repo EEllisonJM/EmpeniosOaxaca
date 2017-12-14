@@ -3,10 +3,10 @@ if ($result->num_rows > 0) {
     /*Mostrar los datos*/
     while ($row = $result->fetch_assoc()) {
 ?>
- <article>
-    <div class="gallery">
-      <a target="_blank"
-         href="<?php
+<article>
+  <div class="gallery">
+    <a target="_blank"
+    href="<?php
         echo $row["rutaImagen"]; 
 ?>">
         <img src="<?php
@@ -30,18 +30,16 @@ if ($result->num_rows > 0) {
      </div>
       <div class="precio">
         <?php
-        echo $row["Precio"];
+        echo "$".$row["Precio"];
 ?>
-
       </div>
       <div class="reservar">
-        <form action="reservar.php" method="POST">
-            <input type="text" hidden name="id" value='<?php echo $row['idProducto']; ?>'>
-    <input type="submit" value="Reservar producto" />
-</form>
+        <form action="index.php" method="post">
+          <input type="submit" value="Reservar producto" name="reservar" />
+        </form>
       </div>
     </div>
-  </article>
+</article>
   <?php
     }
 } else {
