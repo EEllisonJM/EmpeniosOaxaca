@@ -11,14 +11,18 @@ if ($conexion->connect_error) {
 }
 ?>
 <html><!-- Inicio HTML-->
-<?php
 
-if (!empty($_POST['btnConfirmar'])) {/*CLIENTE CONFIRMA COMPRA*/  
-  ?>
-  <script language="javascript">
-        alert("\tSEGURO?");
-        window.location="index.php";
-      </script>           
+<?php
+if ($_REQUEST['btnConfirmar'] =="Confirmar reserva") {/*CLIENTE CONFIRMA COMPRA*/  
+  mysqli_query($conexion,"INSERT INTO cliente(nombre, telefono, codigo, aparta)
+    VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["telefono"]."',123,'".$_REQUEST["producto"]."')");
+  /*CREAR UN TRIGGER PARA QUE EL [codigo] SEA EL [idCliente]*/
+    ?>
+    <script>
+      alert("Reservado Exitosamente.");
+      
+    </script>
+
       <?php
 }
 if (!empty($_POST['reservargetID'])) {/*RESERVAR PRODUCTO*/  

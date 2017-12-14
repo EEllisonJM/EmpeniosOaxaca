@@ -44,20 +44,22 @@ if (!empty($_POST)) {
     }
 }
 ?> 
-
 <html>
    <body>
       <form action="" method="POST" enctype="multipart/form-data">
         <br>
-        Nombre : <input type="text" name="nombre">
+        Nombre : <input required type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]{2,}" title="Ingrese un nombre valido" name="nombre">
         <br>
-        Marca : <input type="text" name="marca">
+        Marca : <input required type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]{2,}" title="Ingrese una marca valida" name="marca">
         <br>
-        Precio : <input type="text" name="precio">
+        Modelo : <input required type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]{2,}" title="Ingrese un modelo valido" name="modelo">
         <br>
-        Descripción : <textarea name="descripcion" class="form-control" id="TextAreaproducto" rows="3"></textarea>
+        Precio : $<input required pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+            title="Ingrese un precio valido" name="precio">
         <br>
-        Imagen : <input type="file" name="image" />
+        Descripción : <textarea required name="descripcion" pattern="[a-zA-Z][a-zA-Z0-9\s]{10,}" title="Ingrese una breve descripción del prouducto" id="TextAreaproducto" rows="3"></textarea>
+        <br>
+        Imagen : <input required type="file" name="image" />
         <br>
         <input type="submit" value="Registrar" />
       </form>
