@@ -1,6 +1,7 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE); //no mostrar errores de sintaxis
+error_reporting(E_ALL ^ E_NOTICE);
 include("../db/configuracion.php");
+//include("../encabezado.php");
 ?>
 <html>
    <head>
