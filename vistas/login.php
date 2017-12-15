@@ -8,12 +8,10 @@ if ($_REQUEST["user"] == "" or $_REQUEST["pass"] == "") {
 ?> 
        <script language="javascript"> 
         alert("\tRellena los Campos Correctamente \n \tFavor de verificar"); 
-        window.location="menu.php"; 
+        window.location="logueo.php"; 
       </script>           
       <?php
-}
-//}
-else {
+}else {
     $r  = mysqli_query($conexion, "SELECT * FROM Usuario WHERE nombre='" . $_REQUEST["user"] . "'
                         and password='" . $_REQUEST["pass"] . "'");
     $r2 = mysqli_fetch_array($r);
@@ -27,8 +25,7 @@ else {
         //Te refirige a la vista
         if ($_SESSION["area"] == "ADMINISTRADOR" || $_SESSION["area"] == "GERENTE" || $_SESSION["area"] == "ENCARGADO TIENDA" ) {
 ?> 
-         <script language="javascript"> 
-          alert("Te haz logueado satisfactoriamente"); 
+         <script language="javascript">
           window.location="agregar.php"; 
           </script> 
           <?php

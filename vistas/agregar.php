@@ -49,7 +49,7 @@ else
 ?>
     <script>
         alert("Acceso Denegado");
-        window.location = "../ses/logueo.php";
+        window.location = "logueo.php";
     </script>
 <?php
   }
