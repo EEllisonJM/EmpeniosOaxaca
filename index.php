@@ -44,8 +44,10 @@ if (/*SELECCIONAR CATEGORIA A MOSTRAR*/
   (!empty($_GET['categoria']=="Celulares")) ||
   (!empty($_GET['categoria']=="AudioVideo")) ||
   (!empty($_GET['categoria']=="Juegos")) ||
-  (!empty($_GET['categoria']=="Televisores"))
-) {  
+  (!empty($_GET['categoria']=="Televisores")) ||
+  (!empty($_GET['categoria']=="Electrodomesticos"))
+)
+ {  
   $categoria=$_GET['categoria'];
     $sql    = "SELECT idProducto, nombre, descripcion, marca, precio,rutaImagen,categoria FROM Producto
   WHERE categoria='$categoria' and reservado=0";
