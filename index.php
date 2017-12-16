@@ -17,21 +17,15 @@ if ($_REQUEST['btnConfirmar'] =="Confirmar reserva" ) {/*CLIENTE CONFIRMA COMPRA
   /*CAMBIRA PRODUCTO A RESERVADO*/
   mysqli_query($conexion, "UPDATE producto SET reservado=1 WHERE idProducto='".$_REQUEST["producto"]."'");
   /*CLIENTE HACE UNA RESERVACION*/
-  mysqli_query($conexion,"INSERT INTO cliente(nombre, telefono, codigo, aparta)
-    VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["telefono"]."',123,'".$_REQUEST["producto"]."')");
+  mysqli_query($conexion,"INSERT INTO cliente(nombre, telefono, codigo, aparta,fecha)
+    VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["telefono"]."',123,'".$_REQUEST["producto"]."', NOW())");
   /*CREAR UN TRIGGER PARA QUE EL [codigo] SEA EL [idCliente]*/
     ?>
     <script>
       alert("Reservado Exitosamente.");      
     </script>
       <?php
-}/*else{
-  ?>
-    <script>
-      alert("Llene los campos necesarios");      
-    </script>
-      <?php
-}*/
+}
 if (!empty($_POST['reservargetID'])) {/*RESERVAR PRODUCTO*/
   $idProducto = $_POST['reservargetID'];
   $result = $conexion->query("SELECT nombre FROM Producto WHERE idProducto=$idProducto");

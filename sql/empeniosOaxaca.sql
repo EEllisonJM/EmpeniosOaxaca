@@ -19,6 +19,7 @@ CREATE TABLE Cliente (
   telefono varchar(60) NOT NULL,
   codigo int(11) NOT NULL,
   aparta int(11) NOT NULL references Producto (idProducto) 
+  fecha date NOT NULL
 );
 -- Estructura de tabla para la tabla Usuario
 CREATE TABLE Usuario (
