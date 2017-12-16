@@ -38,8 +38,8 @@ if (!empty($_POST)) {
         move_uploaded_file($file_tmp, "images/" . $file_name);
         $imagenruta = "/EmpeniosOaxaca/images/" . $file_name;
         /*Insertar datos a la base de datos*/
-        $resultado = mysqli_query($conexion, "INSERT INTO Producto (nombre, descripcion, marca, modelo, precio, rutaImagen, categoria, reservado)
-          VALUES ('$nombre','$descripcion','$marca',$modelo ,$precio, '$imagenruta','$categoria','0')");
+        $resultado = mysqli_query($conexion, "INSERT INTO producto (nombre, descripcion, marca, modelo, precio, rutaImagen, categoria, reservado)
+          VALUES ('$nombre','$descripcion','$marca','$modelo',$precio, '$imagenruta','$categoria','0')");
     } else {
         print_r($errors);
     }
@@ -58,6 +58,34 @@ if (!empty($_POST)) {
         Precio : $<input required pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
             title="Ingrese un precio valido" name="precio">
         <br>
+        Categoria:
+        <select>
+        <?php
+      echo "<option value='Computacion'>";
+      echo "Computacion";
+      echo "</option>";
+      echo "<option value='Consolas'>";
+      echo "Consolas";
+      echo "</option>";
+      echo "<option value='Celulares'>";
+      echo "Celulares";
+      echo "</option>";
+      echo "<option value='AudioVideo'>";
+      echo "AudioVideo";
+      echo "</option>";
+      echo "<option value='Juegos'>";
+      echo "Juegos";
+      echo "</option>";
+      echo "<option value='Televisores'>";
+      echo "Televisores";
+      echo "</option>";
+      echo "<option value='Electrodomesticos'>";
+      echo "Electrodomesticos";
+      echo "</option>";
+
+    ?>
+    </select>
+    <br>
         Descripción : <textarea required name="descripcion" pattern="[a-zA-Z][a-zA-Z0-9\s]{10,}" title="Ingrese una breve descripción del prouducto" id="TextAreaproducto" rows="3"></textarea>
         <br>
         Imagen : <input required type="file" name="image" />
