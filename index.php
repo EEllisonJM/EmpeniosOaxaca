@@ -29,7 +29,7 @@ if ($_REQUEST['btnConfirmar'] =="Confirmar reserva" ) {/*CLIENTE CONFIRMA COMPRA
   //-----------------
     ?>
     <script>
-      alert("La reserva se ha concluido satisfactoriamente, el código a presentar en la sucursal es: <?php echo $codigo; ?> , tiene");
+      alert("La reserva se ha concluido satisfactoriamente\nEl código a presentar en la sucursal es: <?php echo $codigo; ?>\nTiene 12 horas a partir de ahora para adquirir dicho producto en la sucursal\nEn caso contrario el producto será ofrecido a otros clientes");
     </script>
       <?php
 }
