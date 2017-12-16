@@ -15,7 +15,7 @@ include("../db/configuracion.php");
          <label>Usuario</label>
          <input type="text" name="user" value="" placeholder="Usuario" />         
          <label>Contraseña</label>
-         <input type="password" name="pass" placeholder="Contraseña"  />
+         <input type="password" name="pass" placeholder="Contraseña"  />         
          <button>Ingresar</button>
       </form>
    </body>

@@ -13,7 +13,7 @@ if ($conexion->connect_error) {
 <html><!-- Inicio HTML-->
 
 <?php
-if ($_REQUEST['btnConfirmar'] =="Confirmar reserva") {/*CLIENTE CONFIRMA COMPRA*/
+if ($_REQUEST['btnConfirmar'] =="Confirmar reserva" ) {/*CLIENTE CONFIRMA COMPRA*/  
   /*CAMBIRA PRODUCTO A RESERVADO*/
   mysqli_query($conexion, "UPDATE producto SET reservado=1 WHERE idProducto='".$_REQUEST["producto"]."'");
   /*CLIENTE HACE UNA RESERVACION*/
@@ -22,12 +22,16 @@ if ($_REQUEST['btnConfirmar'] =="Confirmar reserva") {/*CLIENTE CONFIRMA COMPRA*
   /*CREAR UN TRIGGER PARA QUE EL [codigo] SEA EL [idCliente]*/
     ?>
     <script>
-      alert("Reservado Exitosamente.");
-      
+      alert("Reservado Exitosamente.");      
     </script>
-
       <?php
-}
+}/*else{
+  ?>
+    <script>
+      alert("Llene los campos necesarios");      
+    </script>
+      <?php
+}*/
 if (!empty($_POST['reservargetID'])) {/*RESERVAR PRODUCTO*/
   $idProducto = $_POST['reservargetID'];
   $result = $conexion->query("SELECT nombre FROM Producto WHERE idProducto=$idProducto");
