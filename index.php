@@ -18,11 +18,18 @@ if ($_REQUEST['btnConfirmar'] =="Confirmar reserva" ) {/*CLIENTE CONFIRMA COMPRA
   mysqli_query($conexion, "UPDATE producto SET reservado=1 WHERE idProducto='".$_REQUEST["producto"]."'");
   /*CLIENTE HACE UNA RESERVACION*/
   mysqli_query($conexion,"INSERT INTO cliente(nombre, telefono, codigo, aparta,fecha)
-    VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["telefono"]."',123,'".$_REQUEST["producto"]."', NOW())");
-  /*CREAR UN TRIGGER PARA QUE EL [codigo] SEA EL [idCliente]*/
+    VALUES ('".$_REQUEST["nombre"]."','".$_REQUEST["telefono"]."', '".$_REQUEST["producto"]."', NOW())");
+  //-----------------
+  $result = $conexion->query("SELECT idCliente FROM Cliente WHERE aparta='".$_REQUEST["producto"]."'");
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      $codigo = $row["idCliente"];
+    }
+  }
+  //-----------------
     ?>
     <script>
-      alert("Reservado Exitosamente.");      
+      alert("La reserva se ha concluido satisfactoriamente, el código a presentar en la sucursal es: <?php echo $codigo; ?> , tiene");
     </script>
       <?php
 }
