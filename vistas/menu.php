@@ -53,15 +53,19 @@ if($_SESSION["area"]=="GERENTE"||$_SESSION["area"]=="ADMINISTRADOR"){?>
           </a>
           <ul>
             <li>
-              <a href="../agregarProducto.php">Alta
+              <a href="">Buscar producto reservado
               </a>
             </li>
             <li>
-              <a href="">Baja
+              <a href="../agregarProducto.php">Dar de alta un producto
               </a>
             </li>
             <li>
-              <a href="">Editar
+              <a href="">Dar de baja un producto
+              </a>
+            </li>
+            <li>
+              <a href="">Editar un producto
               </a>
             </li>
           </ul>

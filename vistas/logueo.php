@@ -1,15 +1,17 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
 include("../db/configuracion.php");
-//include("../encabezado.php");
 ?>
 <html>
    <head>
       <meta charset="UTF-8">
       <title>Login</title>
+      
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
       <link rel="stylesheet" href="css/style.css">
    </head>
-   <body>
+   <body> 
+   <!-- <span class="glyphicon glyphicon-arrow-left"></span>-->
       <form action="login.php" name="entrada_sistema" method="post" enctype="multipart/form-data">
          <header>Iniciar sesión</header>
          <label>Usuario</label>

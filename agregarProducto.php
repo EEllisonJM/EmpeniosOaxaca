@@ -1,6 +1,8 @@
  <?php
 error_reporting(E_ALL ^ E_NOTICE);
 include("db/configuracion.php");
+include("administrador/menu.php");
+
 /*[Registrar] => Producto*/
 if (!empty($_POST)) {
     /*Conexion con la base de datos en el servidor*/

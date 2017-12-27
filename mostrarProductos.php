@@ -15,12 +15,7 @@ if ($result->num_rows > 0) {
       </a>
       <div class="datosProducto">
         <?php
-        echo $row["nombre"];
-?>
-     </div>
-      <div class="datosProducto">
-        <?php
-        echo $row["marca"];
+        echo $row["nombre"] ." ". $row["modelo"]." - ".$row["marca"];
 ?>
      </div>
       <div class="datosProducto">

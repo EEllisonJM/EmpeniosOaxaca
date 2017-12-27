@@ -17,10 +17,10 @@ CREATE TABLE Cliente (
   idCliente int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   nombre varchar(60) NOT NULL,
   telefono varchar(60) NOT NULL,
-  codigo int(11) NOT NULL,
   aparta int(11) NOT NULL references Producto (idProducto) 
   fecha datetime NOT NULL
 );
+ALTER TABLE Cliente AUTO_INCREMENT=1000; 
 -- Estructura de tabla para la tabla Usuario
 CREATE TABLE Usuario (
   idUsuario int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,

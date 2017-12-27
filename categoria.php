@@ -2,8 +2,9 @@
    <form action="index.php" method="POST">
       <nav>
          <ul>
-            <a>Categorías
+            <a>=Categorías=
             </a>
+            
             <li>
                <a href="index.php?categoria=Computacion">Computacion
                </a>
