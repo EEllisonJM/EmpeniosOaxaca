@@ -2,8 +2,8 @@
 error_reporting(E_ALL ^ E_NOTICE);
 
 include("db/configuracion.php");
-include("encabezado.php");
-include("categoria.php");
+include("encabezado.html");
+include("categoria.html");
 
 /*Conectar con el servidor*/
 $conexion = new mysqli($servername, $username, $password, $dbname);

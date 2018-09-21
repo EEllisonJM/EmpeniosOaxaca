@@ -17,7 +17,7 @@ CREATE TABLE Cliente (
   idCliente int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
   nombre varchar(60) NOT NULL,
   telefono varchar(60) NOT NULL,
-  aparta int(11) NOT NULL references Producto (idProducto) 
+  aparta int(11) NOT NULL references Producto (idProducto),
   fecha datetime NOT NULL
 );
 ALTER TABLE Cliente AUTO_INCREMENT=1000; 
